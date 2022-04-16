@@ -1,0 +1,11 @@
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.service-card {
+    border: 2px solid #0abde3;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #576574;
+}

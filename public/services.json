@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "name": "Scuba Diving",
+      "img": "https://i.ibb.co/RSBh3d4/loving-couple-dives-among-corals-fishes-ocean-104263-1144.webp",
+      "price": 220,
+      "rating": 4.8,
+      "details":"Drenaline-pumping excursions for the experienced..."
+    },
+    {
+      "id": 2,
+      "name": "ATV",
+      "img": "https://i.ibb.co/cDghpqm/man-helmet-sitting-atv-quad-bike-mountains-93675-133954.webp",
+      "price": 110,
+      "rating": 4.9,
+      "details": "Start your engines and get ready for an adventure.."
+    },
+    {
+      "id": 3,
+      "name": "Paragliding",
+      "img": "https://i.ibb.co/T8ww9tj/paraglider-tandem-flying-sea-shore-with-blue-water-sky-horison-view-paraglider-blue-lagoon-turkey-15.webp",
+      "price": 320,
+      "rating": 4.9,
+      "details": "Wild landscapes and rough rivers and you will rafting..."
+    },
+    {
+      "id": 4,
+      "name": "Cycling",
+      "img": "https://i.ibb.co/TRFszZY/senior-woman-electric-mountainbike-181624-42843.webp",
+      "price": 119,
+      "rating": 4.9,
+      "details": "Thrilling off-road experience public roads maximum security..."
+    },
+    {
+      "id": 5,
+      "name": "Mountain Climbing ",
+      "img": "https://i.ibb.co/svMqnTW/group-asia-hiking-help-each-other-silhouette-mountains-with-sunlight-28668-202.webp",
+      "price": 250,
+      "rating": 4.7,
+      "details": "Explore the Mountain,make life more Adventures..."
+    }
+  ]
