@@ -6,11 +6,11 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <Navbar className="navBar" expand="lg">
+      <Navbar sticky="top" className="navBar" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">
             <Link to="/">
-              <img height={60} src={logo} alt="" />
+              <img height={40} src={logo} alt="" />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

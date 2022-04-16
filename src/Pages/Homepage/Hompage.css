@@ -1,0 +1,31 @@
+.carousel-item img {
+    width: 100vw;
+    height: 93vh;
+}
+
+.carousel-caption h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 7px;
+    color: #e9c46a;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.carousel-caption h1 {
+    font-size: 50px;
+    line-height: 60px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.slider-caption {
+    position: relative;
+    top: 45%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-80%);
+    color: #FFF;
+    text-align: center;
+}
