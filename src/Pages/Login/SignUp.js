@@ -71,7 +71,11 @@ const SignUp = () => {
               </button>
             </form>
             <p className="ps-4 text-left">
-              <Link to="/login" className="text-success py-0 fw-bold">
+              <Link
+                to="/login"
+                style={{ color: "#c23616" }}
+                className=" py-0 fw-bold"
+              >
                 Already Have an Account?
               </Link>
             </p>
