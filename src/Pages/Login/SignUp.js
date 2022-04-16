@@ -8,8 +8,25 @@ import { BsGithub } from "react-icons/bs";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import "./Login.css";
 import "./Signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
 const SignUp = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/");
+  }
+  const handleCreateUser = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const confirmPass = event.target.confirmPass.value;
+    console.log(name, email, password, confirmPass);
+    createUserWithEmailAndPassword(email, password);
+  };
   return (
     <div>
       <div className="container">
@@ -21,13 +38,14 @@ const SignUp = () => {
             >
               Create an Account
             </h2>
-            <form className="login">
+            <form onSubmit={handleCreateUser} className="login">
               <div className="login__field">
                 <MdOutlineDriveFileRenameOutline />
                 <input
                   autoComplete="off"
                   type="text"
                   className="login__input"
+                  name="name"
                   placeholder="Type Your Name"
                 />
               </div>
@@ -37,6 +55,7 @@ const SignUp = () => {
                   autoComplete="off"
                   type="email"
                   className="login__input"
+                  name="email"
                   placeholder="Type Your Email"
                 />
               </div>
@@ -45,6 +64,7 @@ const SignUp = () => {
                 <input
                   type="password"
                   className="login__input"
+                  name="password"
                   placeholder="Password"
                 />
               </div>
@@ -53,6 +73,7 @@ const SignUp = () => {
                 <input
                   type="password"
                   className="login__input"
+                  name="confirmPass"
                   placeholder=" Confirm Password"
                 />
               </div>
