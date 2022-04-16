@@ -156,7 +156,7 @@ body {
     font-size: 14px;
 }
 
-.newUser span {
+.newUser .create {
     color: #27ae60;
     margin-left: 5px;
     font-size: 18px;

@@ -1,0 +1,18 @@
+.screen {
+    height: 650px;
+    width: 490px;
+
+}
+
+.login {
+    padding-top: 20px;
+    width: 400px;
+}
+
+.login__field {
+    padding: 15px 0;
+}
+
+.checkbox {
+    text-align: left !important;
+}

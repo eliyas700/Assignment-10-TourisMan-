@@ -5,26 +5,37 @@ import { FaChevronRight } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
+import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import "./Login.css";
+import "./Signup.css";
 import { Link } from "react-router-dom";
-const Login = () => {
+const SignUp = () => {
   return (
     <div>
       <div className="container">
         <div className="screen">
           <div className="screen__content">
-            <h1
-              className="ps-3 py-4"
+            <h2
+              className="ps-3 pt-3"
               style={{ color: "#9b59b6", textAlign: "left" }}
             >
-              Welcome Back
-            </h1>
+              Create an Account
+            </h2>
             <form className="login">
+              <div className="login__field">
+                <MdOutlineDriveFileRenameOutline />
+                <input
+                  autoComplete="off"
+                  type="text"
+                  className="login__input"
+                  placeholder="Type Your Name"
+                />
+              </div>
               <div className="login__field">
                 <FaUserAlt />
                 <input
                   autoComplete="off"
-                  type="text"
+                  type="email"
                   className="login__input"
                   placeholder="Type Your Email"
                 />
@@ -37,6 +48,22 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
+              <div className="login__field">
+                <FaLock />
+                <input
+                  type="password"
+                  className="login__input"
+                  placeholder=" Confirm Password"
+                />
+              </div>
+              <div className=" checkbox">
+                <input type="checkbox" className=" text-left" id="terms" />
+                <label htmlFor="terms">
+                  <small className=" ms-1 fw-bold">
+                    Accept the terms and Conditions of TourisMan
+                  </small>
+                </label>
+              </div>
               <p></p>
               <button className="button login__submit">
                 <span className="button__text ">Log In Now</span>
@@ -44,14 +71,8 @@ const Login = () => {
               </button>
             </form>
             <p className="ps-4 text-left">
-              <small className="  text-warning py-0 fw-bold">
-                Forget Password?
-              </small>
-            </p>
-            <p className="newUser">
-              New at Tourisman? <br />
-              <Link to="/signup" className="create">
-                Create An Account
+              <Link to="/login" className="text-success py-0 fw-bold">
+                Already Have an Account?
               </Link>
             </p>
             <div className="social-login">
@@ -81,4 +102,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
