@@ -1,0 +1,46 @@
+footer {
+    background-color: #022739;
+}
+
+.follow {
+    margin-bottom: 27px;
+}
+
+h3 {
+    color: #fff;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-width: 1px;
+    display: inline-block;
+    padding-bottom: 2px;
+    padding-bottom: 27px;
+}
+
+.footer span {
+    font-size: 17px;
+    display: block;
+    color: #fff;
+}
+
+ul li {
+
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.news-letter {
+    padding: 13px 26px;
+    padding-top: 10px;
+    padding-right: 26px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border: #fff solid 1px;
+    width: 100%;
+    margin-bottom: 15px;
+}
