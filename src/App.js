@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./Pages/Footer/Footer";
 import HomePage from "./Pages/Homepage/HomePage";
+import Login from "./Pages/Login/Login";
 import Header from "./Pages/Shared/Header/Header";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<HomePage></HomePage>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
