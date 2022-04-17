@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "./service.css";
 
 const Service = ({ service }) => {
-  console.log(service);
   const { name, img, price, details, rating } = service;
   return (
     <div className="service-card mx-auto text-center ">

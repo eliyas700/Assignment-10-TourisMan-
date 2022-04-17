@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { ToastContainer, toast } from "react-toastify";
@@ -22,7 +23,9 @@ const SignUp = () => {
   const [checked, setChecked] = useState(false);
   const [Error, setError] = useState("");
   const navigate = useNavigate();
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   if (user) {
+    console.log(user);
   }
   let errorMsg;
   if (error) {
@@ -41,8 +44,10 @@ const SignUp = () => {
     if (password === confirmPass) {
       if (checked) {
         await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
         toast("Creating Account");
         await sendEmailVerification();
+        toast("Account Created ,Please Check your email");
         navigate("/");
       }
     } else {

@@ -8,7 +8,7 @@ const Services = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
-  console.log(services);
+
   return (
     <div id="services" style={{ marginTop: "60px" }} className=" ">
       <h2 className="text-secondary text-center d-block fw-bold py-3">

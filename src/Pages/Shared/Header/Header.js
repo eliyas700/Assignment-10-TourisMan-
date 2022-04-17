@@ -8,7 +8,7 @@ import logo from "../../../Images/logo.png";
 import "./Header.css";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+
   return (
     <>
       <Navbar sticky="top" className="navBar" expand="lg">

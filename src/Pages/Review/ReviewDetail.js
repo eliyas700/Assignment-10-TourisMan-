@@ -8,7 +8,7 @@ import { FaQuoteRight } from "react-icons/fa";
 import "./Review.css";
 const ReviewDetail = ({ review }) => {
   const { name, img, comment, rating } = review;
-  console.log(name);
+
   return (
     <Col className="review-item text-center">
       <Card

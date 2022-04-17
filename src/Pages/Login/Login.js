@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-
 import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import Spinner from "./Spinner/Spinner";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef("");
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   let from = location.state?.from?.pathname || "/";
   if (loading) {
     return <Spinner></Spinner>;
@@ -25,8 +31,14 @@ const Login = () => {
   const handleSignIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
+
     const password = event.target.password.value;
     signInWithEmailAndPassword(email, password);
+  };
+  const handleResetPassword = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    toast("Sent email");
   };
   return (
     <div className="loginPage">
@@ -43,9 +55,9 @@ const Login = () => {
               <div className="login__field">
                 <FaUserAlt />
                 <input
-                  autoComplete="off"
                   type="email"
                   name="email"
+                  ref={emailRef}
                   required
                   className="login__input"
                   placeholder="Type Your Email"
@@ -67,11 +79,15 @@ const Login = () => {
                 <FaChevronRight />
               </button>
             </form>
-            <p className="ps-4 text-left">
+            <button
+              onClick={handleResetPassword}
+              style={{ background: "transparent", border: "none" }}
+              className="ps-4 text-left"
+            >
               <small className="  text-warning py-0 fw-bold">
                 Forget Password?
               </small>
-            </p>
+            </button>
             <p className="newUser">
               New at Tourisman? <br />
               <Link to="/signup" className="create">
@@ -88,6 +104,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
