@@ -2,15 +2,14 @@ import React from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
+
 import "./Login.css";
 import { Link } from "react-router-dom";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   return (
-    <div>
+    <div className="loginPage">
       <div className="container">
         <div className="screen">
           <div className="screen__content">
@@ -55,20 +54,7 @@ const Login = () => {
                 Create An Account
               </Link>
             </p>
-            <div className="social-login">
-              <h3>log in via</h3>
-              <div className="social-icons">
-                <a href="/" className="social-login__icon  fs-3">
-                  <FcGoogle />
-                </a>
-                <a href="/" className="social-login__icon fab fa-facebook fs-3">
-                  <FaFacebook />
-                </a>
-                <a href="/" className="social-login__icon  fs-3">
-                  <BsGithub />
-                </a>
-              </div>
-            </div>
+            <SocialLogin></SocialLogin>
           </div>
           <div className="screen__background">
             <span className="screen__background__shape screen__background__shape4"></span>

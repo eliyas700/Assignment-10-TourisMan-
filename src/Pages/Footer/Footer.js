@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <footer>
-      <div id="contact" className="footer py-3">
-        <div className="container">
+      <div id="contact" className="footer py-4">
+        <div className="">
           <div className="row pdn-top-30">
             <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="follow">
@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="copyright">
-            <div className="container">
+            <div className="">
               <p className="text-white">
                 Copyright &#9400; 2022 All Rights Reserved. By{"TourisMan "}
               </p>

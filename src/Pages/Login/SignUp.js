@@ -2,21 +2,23 @@ import React from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import "./Login.css";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
+import SocialLogin from "./SocialLogin";
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
   if (user) {
     navigate("/");
+  }
+  let errorMsg;
+  if (error) {
+    errorMsg = <p>{error.message}</p>;
   }
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -85,7 +87,7 @@ const SignUp = () => {
                   </small>
                 </label>
               </div>
-              <p></p>
+              <p className="text-danger">{errorMsg}</p>
               <button className="button login__submit">
                 <span className="button__text ">Log In Now</span>
                 <FaChevronRight />
@@ -100,20 +102,7 @@ const SignUp = () => {
                 Already Have an Account?
               </Link>
             </p>
-            <div className="social-login">
-              <h3>log in via</h3>
-              <div className="social-icons">
-                <a href="/" className="social-login__icon  fs-3">
-                  <FcGoogle />
-                </a>
-                <a href="/" className="social-login__icon fab fa-facebook fs-3">
-                  <FaFacebook />
-                </a>
-                <a href="/" className="social-login__icon  fs-3">
-                  <BsGithub />
-                </a>
-              </div>
-            </div>
+            <SocialLogin></SocialLogin>
           </div>
           <div className="screen__background">
             <span className="screen__background__shape screen__background__shape4"></span>

@@ -9,7 +9,7 @@ const Service = ({ service }) => {
   const { name, img, price, details, rating } = service;
   return (
     <div className="service-card mx-auto text-center ">
-      <img width={350} className="img-fluid" src={img} alt="" />
+      <img width={450} className="img-fluid" src={img} alt="" />
       <h4 className="my-1">{name}</h4>
       <p>{details}</p>
       <h4>
