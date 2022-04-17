@@ -1,5 +1,7 @@
 .navBar {
     background-color: #2980b9;
+    width: 100%;
+    height: auto;
 }
 
 .navbar-nav a {

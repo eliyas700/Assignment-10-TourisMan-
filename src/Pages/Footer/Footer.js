@@ -67,9 +67,7 @@ const Footer = () => {
                       className="textarea"
                       placeholder="comment"
                       type="text"
-                    >
-                      Comment
-                    </textarea>
+                    ></textarea>
                   </div>
                 </div>
                 <button className="Subscribe">Submit</button>

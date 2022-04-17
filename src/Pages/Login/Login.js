@@ -22,6 +22,10 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
   let from = location.state?.from?.pathname || "/";
+  let errorMsg;
+  if (error) {
+    errorMsg = <p>{error.message}</p>;
+  }
   if (loading) {
     return <Spinner></Spinner>;
   }
@@ -79,6 +83,7 @@ const Login = () => {
                 <FaChevronRight />
               </button>
             </form>
+            <p className="text-danger">{errorMsg}</p>
             <button
               onClick={handleResetPassword}
               style={{ background: "transparent", border: "none" }}
