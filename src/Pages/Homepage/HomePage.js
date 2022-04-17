@@ -4,6 +4,7 @@ import banner1 from "../../Images/banner/banner 1.jpg";
 import banner2 from "../../Images/banner/banner 2.jpg";
 import banner3 from "../../Images/banner/banner 3.jpg";
 import banner4 from "../../Images/banner/banner 4.jpg";
+import Review from "../Review/Review";
 import Services from "../Services/Services";
 import "./Hompage.css";
 const HomePage = () => {
@@ -53,6 +54,9 @@ const HomePage = () => {
       </Carousel>
       <div className="my-4">
         <Services></Services>
+      </div>
+      <div>
+        <Review></Review>
       </div>
     </div>
   );

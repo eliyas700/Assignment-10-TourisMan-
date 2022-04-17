@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "James Falukner",
+      "comment": " If I were speaking to someone about a travel guide, I would stress that you are an awesome guide, with accommodation and dining near the top of your priorities. I myself have usually traveled in a little less style. At the same time, it was not so expensive and I thoroughly enjoyed the comforts. Thanks! ",
+      "img": "https://i.ibb.co/Q65y1BX/person-2.jpg","rating":4.7
+    },
+    {
+      "id": 2,
+      "name": "Andrew Flintoff",
+      "comment": "Absolutely! Will use you again. You were recommended to us by a couple friends of mine. I'm glad they had such a good experience with you. I also want to personally thank you for being so flexible when Brenda and I had to cancel our first trip with you due to a skiing accident she had. You were so gracious and accommodating. Really a class act!",
+      "img": "https://i.ibb.co/dQKsyPn/person-3.jpg","rating":4.7
+    },
+    {
+      "id": 3,
+      "name": "Xara Billis",
+      "comment": "I just want to give my thoughts about the trip. I throughly enjoyed the entire trip. We had a few (mechanical) problems but our tout guide handled everything in a most professional manner. He is a great guy and a wonderful guide and our driver was excellent too. I really liked the number of people on the trip. A small number made the trip much more personal. I would be very interested in another tour with Amerika Venture... ",
+      "img": " https://i.ibb.co/Pt1Hjqk/person-4.jpg","rating":4.9
+    },
+    {
+      "id": 4,
+      "name": "Jasmine Hales",
+      "comment": "TThank you for all the preparation you did to make our trip so successful. We all really appreciated it. Marcos (tour leader) was very easy to get along with and spoke very good English, even idiomatic sayings. He is a fantastic birder - knew almost every bird sound we heard. He was also able to whistle or imitate numerous species, and thus call them closer for a very good and sometimes prolonged look at very secretive species. Many times during our trip we commented on the very good looks we were able to get of almost all the species. There were only a few species that were not seen by the whole group. He was also very attuned to the physical abilities of the group members, and planned and assisted accordingly. ",
+      "img": "https://i.ibb.co/8jSfstq/person-1.jpg","rating":4.5
+    }
+    
+  ]
