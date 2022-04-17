@@ -10,7 +10,7 @@ const ReviewDetail = ({ review }) => {
   const { name, img, comment, rating } = review;
   console.log(name);
   return (
-    <Col className="review-item">
+    <Col className="review-item text-center">
       <Card
         style={{ minHeight: "300px", borderRadius: "10px" }}
         className="position-relative mb-5"
@@ -29,7 +29,7 @@ const ReviewDetail = ({ review }) => {
           className="cardBody"
           style={{ background: "#3498db", borderRadius: "10px" }}
         >
-          <Card.Title className="pt-5">{name}</Card.Title>
+          <Card.Title className="pt-5 fw-bold">{name}</Card.Title>
           {
             <Rating
               initialRating={rating}

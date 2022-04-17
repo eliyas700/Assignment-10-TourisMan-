@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
@@ -6,28 +6,48 @@ import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import "./Login.css";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import SocialLogin from "./SocialLogin";
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending, verificationError] =
+    useSendEmailVerification(auth);
+  const [checked, setChecked] = useState(false);
+  const [Error, setError] = useState("");
   const navigate = useNavigate();
   if (user) {
-    navigate("/");
   }
   let errorMsg;
   if (error) {
     errorMsg = <p>{error.message}</p>;
   }
-  const handleCreateUser = (event) => {
+  const handleCreateUser = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     const confirmPass = event.target.confirmPass.value;
-    console.log(name, email, password, confirmPass);
-    createUserWithEmailAndPassword(email, password);
+    if (password.length < 6) {
+      return setError("Sorry Password Should contain at least 6 Characters");
+    }
+
+    if (password === confirmPass) {
+      if (checked) {
+        await createUserWithEmailAndPassword(email, password);
+        toast("Creating Account");
+        await sendEmailVerification();
+        navigate("/");
+      }
+    } else {
+      setError("Sorry! Password Didn't Match");
+    }
   };
   return (
     <div>
@@ -80,15 +100,20 @@ const SignUp = () => {
                 />
               </div>
               <div className=" checkbox">
-                <input type="checkbox" className=" text-left" id="terms" />
+                <input
+                  type="checkbox"
+                  onClick={() => setChecked(!checked)}
+                  className=" text-left"
+                  id="terms"
+                />
                 <label htmlFor="terms">
-                  <small className=" ms-1 fw-bold">
+                  <small className={!checked ? "text-danger" : "text-success"}>
                     Accept the terms and Conditions of TourisMan
                   </small>
                 </label>
               </div>
-              <p className="text-danger">{errorMsg}</p>
-              <button className="button login__submit">
+              <p className="text-danger">{errorMsg || Error}</p>
+              <button className="button login__submit" disabled={!checked}>
                 <span className="button__text ">Log In Now</span>
                 <FaChevronRight />
               </button>
@@ -112,6 +137,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
