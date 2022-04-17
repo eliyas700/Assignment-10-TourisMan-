@@ -6,6 +6,7 @@ import HomePage from "./Pages/Homepage/HomePage";
 import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import SignUp from "./Pages/Login/SignUp";
+import NotFound from "./Pages/NotFound/NotFound";
 import Header from "./Pages/Shared/Header/Header";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer></Footer>
     </div>
