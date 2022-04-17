@@ -88,7 +88,7 @@ const Login = () => {
                 Forget Password?
               </small>
             </button>
-            <p className="newUser">
+            <p className="newUser ms-2">
               New at Tourisman? <br />
               <Link to="/signup" className="create">
                 Create An Account

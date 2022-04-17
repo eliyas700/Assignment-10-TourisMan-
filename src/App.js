@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import About from "./Pages/About/About";
 import Blog from "./Pages/Blog/Blog";
 import Checkout from "./Pages/CheckOut/Checkout";
 import Footer from "./Pages/Footer/Footer";
@@ -29,7 +30,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-
+        <Route path="about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

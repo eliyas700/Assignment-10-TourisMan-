@@ -10,12 +10,15 @@ const Services = () => {
   }, []);
 
   return (
-    <div id="services" style={{ marginTop: "60px" }} className=" ">
-      <h2 className="text-secondary text-center d-block fw-bold py-3">
-        Services That I Provide
-      </h2>
-      <div className="container mx-auto ">
-        {" "}
+    <div
+      className="container mx-auto"
+      id="services"
+      style={{ marginTop: "60px" }}
+    >
+      <div className="mx-auto ">
+        <h2 className="text-secondary text-center d-block fw-bold py-3">
+          Services That I Provide
+        </h2>{" "}
         <div className="service-container mx-auto ">
           {services.map((service) => (
             <Service key={service.id} service={service}></Service>

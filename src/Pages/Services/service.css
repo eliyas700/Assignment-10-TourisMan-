@@ -4,8 +4,85 @@
     grid-gap: 30px;
 }
 
-.service-card {
-    border: 2px solid #0abde3;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px #576574;
+.activitie-thumb {
+    margin: 0px 15px;
+    position: relative;
+
+}
+
+.activitie-thumb img {
+    transition: .5s ease-in-out;
+    max-width: 360px !important;
+}
+
+.activitie-thumb img:hover {
+    transform: scale(1.07);
+    transform-origin: 50% 50%;
+}
+
+
+.price-layer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #FFF;
+    padding: 5px 20px;
+    z-index: 1;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.activitie-info {
+    position: absolute;
+    bottom: 20px;
+    margin: 0px 15px;
+    padding: 20px;
+    width: auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.media h3 {
+    color: #000;
+    font-size: 45px;
+    margin-right: 10px;
+}
+
+
+
+ul.activity-rating {
+    margin-top: -5px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.activitie-info p {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+p.rating-count {
+    font-size: 13px;
+    margin-top: -5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .service-container {
+        width: 98%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+
+    }
 }
