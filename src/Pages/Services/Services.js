@@ -10,8 +10,8 @@ const Services = () => {
   }, []);
   console.log(services);
   return (
-    <div style={{ marginTop: "60px" }} className=" ">
-      <h2 className="text-secondary d-block fw-bold py-3">
+    <div id="services" style={{ marginTop: "60px" }} className=" ">
+      <h2 className="text-secondary text-center d-block fw-bold py-3">
         Services That I Provide
       </h2>
       <div className="container mx-auto ">

@@ -11,7 +11,9 @@ const Review = () => {
   }, []);
   return (
     <div style={{ marginTop: "80px" }}>
-      <h2 className="fw-bold text-secondary my-5">Clients Feed Back</h2>
+      <h2 className="fw-bold text-secondary my-5 text-center">
+        Clients Feed Back
+      </h2>
 
       <div className="container my-5">
         {" "}
