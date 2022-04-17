@@ -2,17 +2,23 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { useNavigate } from "react-router-dom";
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, githubLoading, githubError] =
+    useSignInWithGithub(auth);
+
   const navigate = useNavigate();
-  if (user) {
+  if (user || githubUser) {
     navigate("/");
   }
   let errorMsg;
-  if (error) {
+  if (error || githubError) {
     errorMsg = <p>{error?.message}</p>;
   }
 
@@ -34,9 +40,15 @@ const SocialLogin = () => {
           <a href="/" className="social-login__icon fab fa-facebook fs-3">
             <FaFacebook />
           </a>
-          <a href="/" className="social-login__icon  fs-3">
+          <button
+            style={{ border: "none", background: "transparent" }}
+            onClick={() => {
+              signInWithGithub();
+            }}
+            className="social-login__icon  fs-3"
+          >
             <BsGithub />
-          </a>
+          </button>
         </div>
       </div>
     </div>
