@@ -2,6 +2,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import "./service.css";
 
 const Service = ({ service }) => {
@@ -23,9 +24,12 @@ const Service = ({ service }) => {
             readonly
           ></Rating>
         }
-        <button className=" mx-auto my-2 btn d-block btn-primary">
+        <Link
+          to="/checkout"
+          className=" mx-auto w-50 my-2 btn d-block btn-primary"
+        >
           Check Out
-        </button>
+        </Link>
       </h4>
     </div>
   );

@@ -4,10 +4,30 @@ import { FaLock } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
+import Spinner from "./Spinner/Spinner";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    signInWithEmailAndPassword(email, password);
+  };
   return (
     <div className="loginPage">
       <div className="container">
@@ -19,12 +39,14 @@ const Login = () => {
             >
               Welcome Back
             </h1>
-            <form className="login">
+            <form onSubmit={handleSignIn} className="login">
               <div className="login__field">
                 <FaUserAlt />
                 <input
                   autoComplete="off"
-                  type="text"
+                  type="email"
+                  name="email"
+                  required
                   className="login__input"
                   placeholder="Type Your Email"
                 />
@@ -34,6 +56,8 @@ const Login = () => {
                 <input
                   type="password"
                   className="login__input"
+                  name="password"
+                  required
                   placeholder="Password"
                 />
               </div>

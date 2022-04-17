@@ -8,6 +8,7 @@ import logo from "../../../Images/logo.png";
 import "./Header.css";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
+  console.log(user);
   return (
     <>
       <Navbar sticky="top" className="navBar" expand="lg">
@@ -36,6 +37,7 @@ const Header = () => {
               <Nav.Link className="fs-5" href="#action2">
                 About
               </Nav.Link>
+
               {user ? (
                 <button
                   style={{ border: "none", background: "transparent" }}
@@ -44,6 +46,18 @@ const Header = () => {
                   }}
                   className="fs-5 text-white-50"
                 >
+                  <span>
+                    <small className="fs-6 text-white">
+                      <img
+                        title={user?.email}
+                        height={28}
+                        className="rounded-circle"
+                        src={user?.photoURL}
+                        alt={user?.displayName}
+                        srcset=""
+                      />
+                    </small>
+                  </span>
                   Sign Out
                 </button>
               ) : (
