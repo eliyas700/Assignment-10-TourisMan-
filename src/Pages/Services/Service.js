@@ -59,6 +59,13 @@ const Service = ({ service }) => {
             </div>
           </div>
           <p>{details.slice(0, 120)}</p>
+          <Link
+            style={{ color: "black" }}
+            to="/checkout"
+            className=" mx-auto w-50 my-2 btn  d-block btn-primary"
+          >
+            Check Out
+          </Link>
         </div>
       </figure>
     </div>
