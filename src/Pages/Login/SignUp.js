@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import "./Login.css";
 import "./Signup.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
@@ -24,6 +24,8 @@ const SignUp = () => {
   const [Error, setError] = useState("");
   const navigate = useNavigate();
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   if (user) {
     console.log(user);
   }
@@ -33,6 +35,7 @@ const SignUp = () => {
   }
   const handleCreateUser = async (event) => {
     event.preventDefault();
+
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
@@ -48,7 +51,7 @@ const SignUp = () => {
         toast("Creating Account");
         await sendEmailVerification();
         toast("Account Created ,Please Check your email");
-        navigate("/");
+        navigate(from, { replace: true });
       }
     } else {
       setError("Sorry! Password Didn't Match");

@@ -50,7 +50,10 @@ const About = () => {
           <button type="button" className="btn btn-pink">
             resume
           </button>
-          <button type="button" className="btn btn-white">
+          <button
+            type="button"
+            className="btn btn-white btn-outline-info text-dark"
+          >
             projects
           </button>
         </div>
@@ -59,8 +62,7 @@ const About = () => {
           <p>
             In next 4 months my Ultimate goals are reading the Full Holy Quran,
             And learn many more web development related technologies and develop
-            my Skills . I also have some plans for my Undergraduate Convocation
-            . InshaAllah i will be able to fullfill my goals.
+            my Skills. InshaAllah i will be able to fullfill my goals.
           </p>
           <p>
             After Eid-ul-fitr i have plan to move Dhaka ,i also would like

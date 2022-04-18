@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import logo from "../../../Images/logo.png";
+import CustomLink from "../../CustomLink/CustomLink";
 import "./Header.css";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -14,9 +15,9 @@ const Header = () => {
       <Navbar sticky="top" className="navBar" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">
-            <Link to="/">
+            <CustomLink to="/">
               <img height={40} src={logo} alt="" />
-            </Link>
+            </CustomLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -25,17 +26,24 @@ const Header = () => {
               style={{ maxHeight: "170px" }}
               navbarScroll
             >
-              <Nav.Link className="fs-5" as={Link} to="/">
-                Home
+              <Nav.Link className="fs-5">
+                <CustomLink to="/home">Home</CustomLink>
               </Nav.Link>
-              <Nav.Link className="fs-5" href="home#services">
+              <Nav.Link
+                style={{ color: "#dff9fb" }}
+                className="fs-5 "
+                href="home#services"
+              >
                 Services
               </Nav.Link>
-              <Nav.Link className="fs-5" as={Link} to="/blog">
-                Blog
+              <Nav.Link className="fs-5">
+                <CustomLink to="/blog">Blog</CustomLink>
               </Nav.Link>
-              <Nav.Link className="fs-5" as={Link} to="/about">
-                About
+              <Nav.Link>
+                <CustomLink className="fs-5" to="/about">
+                  {" "}
+                  About
+                </CustomLink>
               </Nav.Link>
 
               {user ? (
@@ -61,8 +69,8 @@ const Header = () => {
                   Sign Out
                 </button>
               ) : (
-                <Nav.Link className="fs-5" as={Link} to="/login">
-                  Log In
+                <Nav.Link className="fs-5">
+                  <CustomLink to="/login"> Log In</CustomLink>
                 </Nav.Link>
               )}
             </Nav>

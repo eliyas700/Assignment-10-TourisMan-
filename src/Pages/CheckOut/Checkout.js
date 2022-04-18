@@ -1,9 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import "./Checkout.css";
 const Checkout = () => {
+  const { serviceName } = useParams();
   return (
     <main className="checkout">
-      <h1>Checkout</h1>
+      <h1>
+        Checkout for <span className="text-danger">{serviceName}</span>
+      </h1>
       <p>Select one of these payment methods</p>
       <div className="alternate-payment">
         <button className="btn btn-paypal" type="button">

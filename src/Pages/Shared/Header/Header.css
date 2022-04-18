@@ -5,11 +5,8 @@
 }
 
 .navbar-nav a {
-    color: #ecf0f1 !important;
     text-transform: uppercase;
     transition: .5s ease-in-out;
 }
 
-.navbar-nav a:hover {
-    color: #2c3e50 !important;
-}
+.navbar-nav a:hover {}

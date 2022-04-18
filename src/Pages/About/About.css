@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .about-left-content>div {
@@ -170,6 +170,7 @@
 
 .btn.btn-white {
     transition: all 0.5s ease-in-out;
+    border-color: #2980b9;
 }
 
 .btn.btn-white:hover {

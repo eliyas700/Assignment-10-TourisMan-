@@ -8,6 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { useNavigate } from "react-router-dom";
+import Spinner from "./Spinner/Spinner";
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubLoading, githubError] =
@@ -16,6 +17,9 @@ const SocialLogin = () => {
   const navigate = useNavigate();
   if (user || githubUser) {
     navigate("/");
+  }
+  if (loading || githubLoading) {
+    <Spinner></Spinner>;
   }
   let errorMsg;
   if (error || githubError) {
@@ -37,9 +41,13 @@ const SocialLogin = () => {
           >
             <FcGoogle />
           </button>
-          <a href="/" className="social-login__icon fab fa-facebook fs-3">
+          <button
+            style={{ border: "none", background: "transparent" }}
+            disabled
+            className="social-login__icon fab fa-facebook fs-3"
+          >
             <FaFacebook />
-          </a>
+          </button>
           <button
             style={{ border: "none", background: "transparent" }}
             onClick={() => {
