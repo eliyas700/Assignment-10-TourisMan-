@@ -17,7 +17,7 @@ const Review = () => {
 
       <div className="container my-5">
         {" "}
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={2} className="g-4">
           {reviews.map((review) => (
             <ReviewDetail key={review.id} review={review}></ReviewDetail>
           ))}

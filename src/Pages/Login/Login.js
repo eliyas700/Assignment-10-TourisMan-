@@ -32,12 +32,14 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  // Sign In By Email Password
   const handleSignIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     signInWithEmailAndPassword(email, password);
   };
+  //reset Password
   const handleResetPassword = async () => {
     const email = emailRef.current.value;
     await sendPasswordResetEmail(email);

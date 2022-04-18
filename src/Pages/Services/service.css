@@ -86,3 +86,14 @@ p.rating-count {
 
     }
 }
+
+
+@media only screen and (max-width: 900px) {
+    .service-container {
+        width: 98%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+
+    }
+}

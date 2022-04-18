@@ -1,8 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import "./Checkout.css";
 const Checkout = () => {
   const { serviceName } = useParams();
+  const handleCheckOut = () => {
+    toast("Thank you for the booking");
+  };
   return (
     <main className="checkout">
       <h1>
@@ -108,9 +112,14 @@ const Checkout = () => {
           </option>
         </select>
       </form>
-      <button className="btn btn-primary" type="button">
+      <button
+        onClick={handleCheckOut}
+        className="btn btn-primary"
+        type="button"
+      >
         Checkout
       </button>
+      <ToastContainer></ToastContainer>
     </main>
   );
 };

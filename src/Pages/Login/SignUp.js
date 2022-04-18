@@ -33,6 +33,8 @@ const SignUp = () => {
   if (error) {
     errorMsg = <p>{error.message}</p>;
   }
+
+  // Create New User
   const handleCreateUser = async (event) => {
     event.preventDefault();
 
@@ -47,8 +49,10 @@ const SignUp = () => {
     if (password === confirmPass) {
       if (checked) {
         await createUserWithEmailAndPassword(email, password);
+        // Update User Info
         await updateProfile({ displayName: name });
         toast("Creating Account");
+        // Send Email Verification Message
         await sendEmailVerification();
         toast("Account Created ,Please Check your email");
         navigate(from, { replace: true });
@@ -76,6 +80,7 @@ const SignUp = () => {
                   type="text"
                   className="login__input"
                   name="name"
+                  required
                   placeholder="Type Your Name"
                 />
               </div>
@@ -84,6 +89,7 @@ const SignUp = () => {
                 <input
                   autoComplete="off"
                   type="email"
+                  required
                   className="login__input"
                   name="email"
                   placeholder="Type Your Email"
@@ -93,6 +99,7 @@ const SignUp = () => {
                 <FaLock />
                 <input
                   type="password"
+                  required
                   className="login__input"
                   name="password"
                   placeholder="Password"
@@ -102,6 +109,7 @@ const SignUp = () => {
                 <FaLock />
                 <input
                   type="password"
+                  required
                   className="login__input"
                   name="confirmPass"
                   placeholder=" Confirm Password"
